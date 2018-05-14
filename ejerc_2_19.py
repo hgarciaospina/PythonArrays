@@ -9,8 +9,7 @@ Arreglo resultante B = (2,5,7)
 
 '''
 
-from random import randint
-
+encontrado = False
 i = 0
 j = 0
 x = 0
@@ -20,10 +19,10 @@ numero = 0
 A = []
 B = []
 
-N = int(input("Ingrese el número de elementos que desea almacena en el arreglo: "))
+N = int(input("Ingrese el número de elementos que desea almacenar en el arreglo: "))
 
 while (i < N):
-	numero = int(input("Ingrese un número :"))
+	numero = int(input("Ingrese el número del elemento :"))
 	A.append(numero)
 	i += 1
 
@@ -33,6 +32,10 @@ while (j < len(A)):
 	if  (x == A[j]):
 			posicion = j
 			B.append(posicion)
+			encontrado = True
 	j += 1
 
-print(B)
+if (encontrado):
+	print("El número " + str(x) + " se encuentra en las posiciones " + str(B) + " del arreglo " + str(A))
+else:
+	print("El número " + str(x) + " NO se encuentra en el arreglo " + str(A))
